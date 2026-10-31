@@ -12,6 +12,7 @@ import {
   useOnline,
   usePrevious,
   useThrottledCallback,
+  useVirtualList,
 } from "./index";
 
 describe("debounce", () => {
@@ -228,5 +229,65 @@ describe("useOnline", () => {
     });
     expect(result.current).toBe(false);
     spy.mockRestore();
+  });
+});
+
+describe("useVirtualList", () => {
+  function List({ count, onApi }: { count: number; onApi?: (api: ReturnType<typeof useVirtualList>) => void }) {
+    const ref = useRef<HTMLDivElement>(null);
+    const api = useVirtualList(ref, { count, itemHeight: 20, overscan: 2 });
+    onApi?.(api);
+    return (
+      <div ref={ref} data-testid="scroller">
+        <div style={{ height: api.totalHeight }}>
+          {api.items.map((item) => (
+            <div key={item.index} data-start={item.start}>
+              row {item.index}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  beforeEach(() => {
+    vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(100);
+  });
+  afterEach(() => vi.restoreAllMocks());
+
+  const rows = (container: HTMLElement) =>
+    Array.from(container.querySelectorAll("[data-start]")).map((el) => el.textContent);
+
+  it("hanya merender baris yang terlihat plus overscan", () => {
+    const { container } = render(<List count={1000} />);
+    // 100px / 20px = 5 baris + 1 (baris terpotong) + 2 overscan di bawah
+    expect(rows(container)).toEqual(["row 0", "row 1", "row 2", "row 3", "row 4", "row 5", "row 6", "row 7"]);
+  });
+
+  it("menggeser jendela saat di-scroll dan memberi posisi top yang benar", () => {
+    const { container } = render(<List count={1000} />);
+    const scroller = container.querySelector<HTMLElement>("[data-testid=scroller]")!;
+    act(() => {
+      scroller.scrollTop = 500; // baris pertama terlihat: 25
+      fireEvent.scroll(scroller);
+    });
+    const list = rows(container);
+    expect(list[0]).toBe("row 23");
+    expect(list.at(-1)).toBe("row 32");
+    expect(container.querySelector("[data-start]")?.getAttribute("data-start")).toBe("460");
+  });
+
+  it("tidak melewati jumlah baris, dan totalHeight = count × itemHeight", () => {
+    let api: ReturnType<typeof useVirtualList> | undefined;
+    const { container } = render(<List count={3} onApi={(a) => (api = a)} />);
+    expect(rows(container)).toEqual(["row 0", "row 1", "row 2"]);
+    expect(api?.totalHeight).toBe(60);
+  });
+
+  it("scrollToIndex mengatur scrollTop container", () => {
+    let api: ReturnType<typeof useVirtualList> | undefined;
+    const { container } = render(<List count={1000} onApi={(a) => (api = a)} />);
+    act(() => api?.scrollToIndex(50));
+    expect(container.querySelector<HTMLElement>("[data-testid=scroller]")!.scrollTop).toBe(1000);
   });
 });
