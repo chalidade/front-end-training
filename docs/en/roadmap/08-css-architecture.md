@@ -59,3 +59,4 @@ how you keep scope, specificity, and visual consistency under control as your te
 
 - [`@chalidade/utils`](../toolkit/utils.md): `cx`
 - [`@chalidade/tokens`](../toolkit/tokens.md): primitive + semantic tokens, light/dark themes
+- Deep dive: [Design systems: tokens, governance, versioning](../deep-dives/design-system.md)
