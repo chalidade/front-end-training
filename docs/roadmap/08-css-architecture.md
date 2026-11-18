@@ -59,3 +59,4 @@ cara mengendalikan scope, specificity, dan konsistensi visual saat tim dan codeb
 
 - [`@chalidade/utils`](../toolkit/utils.md): `cx`
 - [`@chalidade/tokens`](../toolkit/tokens.md): token primitif + semantik, tema terang/gelap
+- Deep dive: [Design system: tokens, governance, versioning](../deep-dives/design-system.md)
