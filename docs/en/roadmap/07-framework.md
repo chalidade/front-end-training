@@ -72,5 +72,5 @@ Svelte, Solid, and Qwik for comparison.
 ## Related toolkit
 
 - [`@chalidade/react-hooks`](../toolkit/react-hooks.md): `useDebouncedCallback`, `useThrottledCallback`, `useLatest`, etc.
-- Deep dive: [Efficiency in React](../deep-dives/react-efficiency.md), [React Fiber from the source code](../deep-dives/react-fiber.md)
+- Deep dive: [Efficiency in React](../deep-dives/react-efficiency.md), [React Fiber from the source code](../deep-dives/react-fiber.md), [Signals](../deep-dives/signals.md)
 - (planned) `@chalidade/ui`: headless + styled components
