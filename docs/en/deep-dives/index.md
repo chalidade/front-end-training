@@ -14,7 +14,7 @@ usually just use, with experiments you can run yourself.
 | [The accessibility tree & how screen readers work](accessibility-tree.md) | ✅ | 02, 07, 15 |
 | [React Fiber from the source code](react-fiber.md): work loop, hooks, lanes, commit | ✅ | 07 |
 | [Signals: from Knockout to the TC39 proposal](signals.md): tracking, glitches, push-pull | ✅ | 07 |
-| A module bundler from scratch | 🗓️ | 09 |
+| [A module bundler from scratch](module-bundler.md): graph, runtime, tree shaking, splitting | ✅ | 09 |
 | Design systems: tokens, governance, versioning | 🗓️ | 08 |
 | State management: mental models, not libraries | 🗓️ | 07, 19 |
 | Micro-frontends: when and when not | 🗓️ | 09, 18 |

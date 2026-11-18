@@ -60,3 +60,4 @@ server, dan bug "jalan di dev tapi rusak di prod" semuanya bersumber dari sini.
 ## Toolkit terkait
 
 - Package di repo ini di-build dengan tsup (berbasis esbuild)
+- Deep dive: [Module bundler dari nol](../deep-dives/module-bundler.md)

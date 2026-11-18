@@ -60,3 +60,4 @@ Build tools decide what actually reaches the user's browser. Bundle size, dev se
 ## Related toolkit
 
 - The packages in this repo are built with tsup (based on esbuild)
+- Deep dive: [A module bundler from scratch](../deep-dives/module-bundler.md)
