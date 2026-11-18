@@ -64,7 +64,7 @@ hanyalah tebakan.
 
 - [`@chalidade/utils`](../toolkit/utils.md): `debounce`, `throttle`
 - [`@chalidade/react-hooks`](../toolkit/react-hooks.md): `useIntersectionObserver`, `useThrottledCallback`
-- (rencana) `useVirtualList` di `@chalidade/react-hooks`
+- [`useVirtualList`](../toolkit/react-hooks.md#usevirtuallist) di `@chalidade/react-hooks`
 - Deep dive: [Efisiensi di React](../deep-dives/react-efficiency.md)
 - Deep dive: [Cara kerja V8](../deep-dives/v8.md)
 - Deep dive: [Browser Rendering Pipeline](../deep-dives/browser-rendering-pipeline.md)

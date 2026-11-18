@@ -27,6 +27,7 @@ Requires React 18 or newer (`useSyncExternalStore`).
 | [`useEventListener`](#useeventlistener) | Listeners that clean up after themselves |
 | [`useOnClickOutside`](#useonclickoutside) | Closing a dropdown/popover on outside click |
 | [`useIntersectionObserver`](#useintersectionobserver) | Lazy loading, infinite scroll, enter animations |
+| [`useVirtualList`](#usevirtuallist) | Lists with thousands of rows: only visible rows are rendered |
 | [`usePrevious`](#useprevious) | The value from the previous render |
 | [`useLatest`](#uselatest) | A ref holding the latest value (no stale closures) |
 | `useIsomorphicLayoutEffect` | `useLayoutEffect` without server warnings |
@@ -122,6 +123,31 @@ Uses `pointerdown` so it also works on touch screens.
 const { ref, isIntersecting } = useIntersectionObserver({ rootMargin: "200px", once: true });
 return <img ref={ref} src={isIntersecting ? src : undefined} alt={alt} />;
 ```
+
+## `useVirtualList`
+
+Only the visible rows (plus `overscan`) exist in the DOM, so a 50,000-row list stays light. Every
+row must be `itemHeight` tall. The component re-renders only when the first visible row changes,
+not on every scrolled pixel. The formula is explained in the
+[Efficiency in React](/en/deep-dives/react-efficiency#_6-virtualization) deep dive.
+
+```tsx
+const ref = useRef<HTMLDivElement>(null);
+const { items, totalHeight, scrollToIndex } = useVirtualList(ref, { count: rows.length, itemHeight: 32 });
+
+<div ref={ref} style={{ height: 400, overflow: "auto" }}>
+  <div style={{ height: totalHeight, position: "relative" }}>
+    {items.map(({ index, start }) => (
+      <div key={index} style={{ position: "absolute", top: start, height: 32, width: "100%" }}>
+        {rows[index].name}
+      </div>
+    ))}
+  </div>
+</div>
+```
+
+For rows of varying height, use a library such as TanStack Virtual or CSS
+`content-visibility: auto`.
 
 ## `usePrevious`
 

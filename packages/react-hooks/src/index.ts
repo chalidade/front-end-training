@@ -10,3 +10,4 @@ export { useOnline } from "./useOnline";
 export { useOnClickOutside } from "./useOnClickOutside";
 export { usePrevious } from "./usePrevious";
 export { useThrottledCallback, type ThrottledCallback } from "./useThrottledCallback";
+export { useVirtualList, type VirtualItem, type VirtualList, type VirtualListOptions } from "./useVirtualList";

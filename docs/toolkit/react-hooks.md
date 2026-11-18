@@ -27,6 +27,7 @@ Membutuhkan React 18 atau lebih baru (`useSyncExternalStore`).
 | [`useEventListener`](#useeventlistener) | Listener yang otomatis dilepas |
 | [`useOnClickOutside`](#useonclickoutside) | Menutup dropdown/popover saat klik di luar |
 | [`useIntersectionObserver`](#useintersectionobserver) | Lazy load, infinite scroll, animasi masuk |
+| [`useVirtualList`](#usevirtuallist) | List ribuan baris: hanya baris terlihat yang dirender |
 | [`usePrevious`](#useprevious) | Nilai di render sebelumnya |
 | [`useLatest`](#uselatest) | Ref berisi nilai terbaru (anti stale closure) |
 | `useIsomorphicLayoutEffect` | `useLayoutEffect` tanpa peringatan di server |
@@ -120,6 +121,31 @@ Memakai `pointerdown` supaya juga bekerja di layar sentuh.
 const { ref, isIntersecting } = useIntersectionObserver({ rootMargin: "200px", once: true });
 return <img ref={ref} src={isIntersecting ? src : undefined} alt={alt} />;
 ```
+
+## `useVirtualList`
+
+Hanya baris yang terlihat (plus `overscan`) yang ada di DOM, jadi list 50.000 baris tetap ringan.
+Semua baris harus setinggi `itemHeight`. Komponen hanya render ulang saat baris pertama yang
+terlihat berubah, bukan di setiap piksel scroll. Penjelasan rumusnya ada di deep dive
+[Efisiensi di React](/deep-dives/react-efficiency#_6-virtualisasi).
+
+```tsx
+const ref = useRef<HTMLDivElement>(null);
+const { items, totalHeight, scrollToIndex } = useVirtualList(ref, { count: rows.length, itemHeight: 32 });
+
+<div ref={ref} style={{ height: 400, overflow: "auto" }}>
+  <div style={{ height: totalHeight, position: "relative" }}>
+    {items.map(({ index, start }) => (
+      <div key={index} style={{ position: "absolute", top: start, height: 32, width: "100%" }}>
+        {rows[index].name}
+      </div>
+    ))}
+  </div>
+</div>
+```
+
+Untuk tinggi baris yang berbeda-beda, pakai library seperti TanStack Virtual atau CSS
+`content-visibility: auto`.
 
 ## `usePrevious`
 
