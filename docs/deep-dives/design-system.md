@@ -55,10 +55,10 @@ TypeScript, lalu `flatten()` mengubahnya menjadi CSS variables:
 
 ```ts
 // packages/tokens/src/tokens.ts (ringkas)
-export const color = { indigo: { 500: "#6366f1", 600: "#4f46e5" }, white: "#ffffff" };
+export const color = { indigo: { 400: "#818cf8", 600: "#4f46e5" }, white: "#ffffff", slate: { 950: "#020617" } };
 export const theme = {
   light: { primary: color.indigo[600], onPrimary: color.white },
-  dark: { primary: color.indigo[500], onPrimary: color.white },
+  dark: { primary: color.indigo[400], onPrimary: color.slate[950] },
 };
 ```
 
@@ -66,9 +66,9 @@ export const theme = {
 /* dist/tokens.css (ringkas) */
 :root { --fet-color-indigo-600: #4f46e5; --fet-theme-primary: #4f46e5; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --fet-theme-primary: #6366f1; }
+  :root:not([data-theme="light"]) { --fet-theme-primary: #818cf8; }
 }
-[data-theme="dark"] { --fet-theme-primary: #6366f1; }
+[data-theme="dark"] { --fet-theme-primary: #818cf8; }
 ```
 
 Satu sumber bisa menghasilkan banyak output: CSS variables untuk web, konstanta TypeScript,
@@ -217,6 +217,14 @@ Dua temuan nyata dari token repo ini:
   akan terlihat oleh orang yang hanya mengecek satu mode. Inilah alasan audit kontras sebaiknya
   berjalan di CI untuk setiap mode.
 
+::: tip Sudah diperbaiki
+Output di atas berasal dari token sebelum perbaikan (commit `36576cb`). Sesudahnya, mode gelap
+memakai `primary` indigo-400 dengan `onPrimary` slate-950 (6.76:1), dan `accent` mode terang naik
+dari cyan-600 (3.68:1) ke cyan-700 (5.36:1). Audit ini sekarang berjalan sebagai test di
+`packages/tokens/src/index.test.ts`, jadi CI menolak token yang turun di bawah AA. Kalau kamu
+menjalankan eksperimen ini di main, hanya `border` yang masih `GAGAL`.
+:::
+
 **2. Resolver alias DTCG mini.** Tiga tingkat token, rebranding lewat satu baris, dan dua
 kesalahan yang harus ditangkap saat build.
 
@@ -302,19 +310,24 @@ console.log("bump yang disarankan:", bump, "| total token:", Object.keys(before)
     '--fet-theme-light-info',
     '--fet-theme-dark-info'
   ],
-  changed: [ '--fet-theme-dark-primary: #6366f1 → #4f46e5' ]
+  changed: [ '--fet-theme-dark-primary: #818cf8 → #4f46e5' ]
 }
 bump yang disarankan: major | total token: 125 → 127
 ```
 
 Rename satu token sudah cukup membuat rilis menjadi major, walaupun 124 token lain aman. Coba
-ulangi tanpa baris rename: hasilnya `minor`. Lalu jalankan lagi Eksperimen 1 dengan
-`dark.primary = "#4f46e5"`: rasio `onPrimary/primary` naik menjadi 6.29, jadi perubahan nilai ini
-sekaligus memperbaiki temuan kontras tadi.
+ulangi tanpa baris rename: hasilnya `minor`.
 
-Catat hasil dan kejutannya di [catatan eksperimen](/notes/). Tantangan berikutnya: jadikan
-Eksperimen 1 dan 3 sebagai test di `packages/tokens` supaya CI menolak token yang gagal kontras atau
-rename tanpa changeset major.
+Perhatikan juga jebakan di perubahan nilainya. Indigo-600 tampak seperti perbaikan untuk temuan
+kontras tadi (teks putih di atasnya 6.29:1), tapi `primary` juga dipakai sebagai warna teks di atas
+`bg`, dan pasangan itu turun menjadi 3.21:1. Satu token yang dipakai untuk dua peran
+(latar tombol dan warna teks) harus lolos di keduanya. Karena itu perbaikan yang benar mengubah
+tiga token sekaligus (`primary`, `primaryHover`, `onPrimary`), dan test kontras menjaga semua
+pasangannya.
+
+Catat hasil dan kejutannya di [catatan eksperimen](/notes/). Eksperimen 1 sudah menjadi test di
+`packages/tokens`. Tantangan berikutnya: jadikan Eksperimen 3 sebagai pemeriksaan CI yang menolak
+rename token tanpa changeset major.
 
 ## Implikasi praktis
 
