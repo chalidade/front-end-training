@@ -125,7 +125,7 @@ export const theme = {
     primary: color.indigo[600],
     primaryHover: color.indigo[700],
     onPrimary: color.white,
-    accent: color.cyan[600],
+    accent: color.cyan[700], // cyan-600 di atas putih hanya 3.68:1
     success: color.green[700],
     warning: color.amber[700],
     danger: color.red[600],
@@ -138,9 +138,11 @@ export const theme = {
     fg: color.slate[100],
     fgMuted: color.slate[400],
     border: color.slate[800],
-    primary: color.indigo[500],
-    primaryHover: color.indigo[600],
-    onPrimary: color.white,
+    // Mode gelap memakai primary yang lebih terang dengan teks gelap di atasnya: indigo-500 dengan
+    // teks putih hanya 4.47:1, di bawah WCAG AA 4.5:1. Lihat test kontras di index.test.ts.
+    primary: color.indigo[400],
+    primaryHover: color.indigo[300],
+    onPrimary: color.slate[950],
     accent: color.cyan[400],
     success: color.green[400],
     warning: color.amber[400],

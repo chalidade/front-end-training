@@ -54,10 +54,10 @@ objects, and `flatten()` turns them into CSS variables:
 
 ```ts
 // packages/tokens/src/tokens.ts (abridged)
-export const color = { indigo: { 500: "#6366f1", 600: "#4f46e5" }, white: "#ffffff" };
+export const color = { indigo: { 400: "#818cf8", 600: "#4f46e5" }, white: "#ffffff", slate: { 950: "#020617" } };
 export const theme = {
   light: { primary: color.indigo[600], onPrimary: color.white },
-  dark: { primary: color.indigo[500], onPrimary: color.white },
+  dark: { primary: color.indigo[400], onPrimary: color.slate[950] },
 };
 ```
 
@@ -65,9 +65,9 @@ export const theme = {
 /* dist/tokens.css (abridged) */
 :root { --fet-color-indigo-600: #4f46e5; --fet-theme-primary: #4f46e5; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --fet-theme-primary: #6366f1; }
+  :root:not([data-theme="light"]) { --fet-theme-primary: #818cf8; }
 }
-[data-theme="dark"] { --fet-theme-primary: #6366f1; }
+[data-theme="dark"] { --fet-theme-primary: #818cf8; }
 ```
 
 One source can produce many outputs: CSS variables for the web, TypeScript constants, Android
@@ -215,6 +215,14 @@ dark  border/bg          1.38 GAGAL
   only one mode will never see this bug. That's why a contrast audit should run in CI for every
   mode.
 
+::: tip Now fixed
+The output above comes from the tokens before the fix (commit `36576cb`). Since then, dark mode
+uses `primary` indigo-400 with `onPrimary` slate-950 (6.76:1), and light-mode `accent` moved from
+cyan-600 (3.68:1) to cyan-700 (5.36:1). This audit now runs as a test in
+`packages/tokens/src/index.test.ts`, so CI rejects tokens that drop below AA. If you run this
+experiment on main, only `border` still shows `GAGAL`.
+:::
+
 **2. A mini DTCG alias resolver.** Three token tiers, a one-line rebrand, and two mistakes that
 must be caught at build time.
 
@@ -301,19 +309,23 @@ console.log("bump yang disarankan:", bump, "| total token:", Object.keys(before)
     '--fet-theme-light-info',
     '--fet-theme-dark-info'
   ],
-  changed: [ '--fet-theme-dark-primary: #6366f1 → #4f46e5' ]
+  changed: [ '--fet-theme-dark-primary: #818cf8 → #4f46e5' ]
 }
 bump yang disarankan: major | total token: 125 → 127
 ```
 
 Renaming a single token is enough to make the release major, even though the other 124 tokens are
-safe. Try again without the rename line: the result is `minor`. Then rerun Experiment 1 with
-`dark.primary = "#4f46e5"`: the `onPrimary/primary` ratio rises to 6.29, so this value change also
-fixes the contrast finding above.
+safe. Try again without the rename line: the result is `minor`.
 
-Record your results and surprises in the [experiment notes](/en/notes/). Next challenge: turn
-Experiments 1 and 3 into tests in `packages/tokens` so CI rejects tokens that fail contrast, or a
-rename without a major changeset.
+Notice the trap in the value change, too. Indigo-600 looks like a fix for the contrast finding
+above (white text on it is 6.29:1), but `primary` is also used as a text color on `bg`, and that
+pair drops to 3.21:1. A token used for two roles (button background and text color) has
+to pass in both. That's why the real fix changes three tokens at once (`primary`, `primaryHover`,
+`onPrimary`), and the contrast test guards every pair.
+
+Record your results and surprises in the [experiment notes](/en/notes/). Experiment 1 is now a test in
+`packages/tokens`. Next challenge: turn Experiment 3 into a CI check that rejects a token rename
+without a major changeset.
 
 ## Practical implications
 
