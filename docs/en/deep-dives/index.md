@@ -16,7 +16,7 @@ usually just use, with experiments you can run yourself.
 | [Signals: from Knockout to the TC39 proposal](signals.md): tracking, glitches, push-pull | ✅ | 07 |
 | [A module bundler from scratch](module-bundler.md): graph, runtime, tree shaking, splitting | ✅ | 09 |
 | [Design systems](design-system.md): tokens, governance, versioning | ✅ | 08 |
-| State management: mental models, not libraries | 🗓️ | 07, 19 |
+| [State management](state-management.md): mental models, not libraries | ✅ | 07, 19 |
 | Micro-frontends: when and when not | 🗓️ | 09, 18 |
 | Front-end observability: error tracking, RUM, tracing | 🗓️ | 16 |
 | Internationalization (i18n): `Intl`, plural rules, RTL | 🗓️ | 02, 03 |
