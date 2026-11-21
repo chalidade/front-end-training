@@ -52,6 +52,7 @@ function sidebar(lang: "id" | "en"): DefaultTheme.Sidebar {
           { text: t("Module bundler dari nol", "Module bundler from scratch"), link: `${p}/deep-dives/module-bundler` },
           { text: "Design system", link: `${p}/deep-dives/design-system` },
           { text: "State management", link: `${p}/deep-dives/state-management` },
+          { text: "Micro-frontend", link: `${p}/deep-dives/micro-frontend` },
         ],
       },
     ],
