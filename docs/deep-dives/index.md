@@ -17,7 +17,7 @@ biasanya hanya dipakai, dengan eksperimen yang bisa dijalankan sendiri.
 | [Module bundler dari nol](module-bundler.md): graph, runtime, tree shaking, splitting | ✅ | 09 |
 | [Design system](design-system.md): tokens, governance, versioning | ✅ | 08 |
 | [State management](state-management.md): model mental, bukan library | ✅ | 07, 19 |
-| Micro-frontend: kapan dan kapan tidak | 🗓️ | 09, 18 |
+| [Micro-frontend](micro-frontend.md): kapan dan kapan tidak | ✅ | 09, 18 |
 | Observability front-end: error tracking, RUM, tracing | 🗓️ | 16 |
 | Internationalization (i18n): `Intl`, plural rules, RTL | 🗓️ | 02, 03 |
 

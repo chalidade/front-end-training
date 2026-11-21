@@ -57,4 +57,5 @@ keputusan arsitektur, bukan sekadar pilihan framework.
 
 ## Toolkit terkait
 
+- Deep dive: [Micro-frontend: kapan dan kapan tidak](../deep-dives/micro-frontend.md)
 - Situs dokumentasi ini sendiri dibangun dengan SSG (VitePress)

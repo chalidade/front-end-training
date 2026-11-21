@@ -57,4 +57,5 @@ architecture decision, not just a framework choice.
 
 ## Related toolkit
 
+- Deep dive: [Micro-frontends: when and when not](../deep-dives/micro-frontend.md)
 - This documentation site itself is built with SSG (VitePress)
