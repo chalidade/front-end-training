@@ -69,3 +69,4 @@ hanyalah tebakan.
 - Deep dive: [Cara kerja V8](../deep-dives/v8.md)
 - Deep dive: [Browser Rendering Pipeline](../deep-dives/browser-rendering-pipeline.md)
 - Deep dive: [HTTP Caching](../deep-dives/http-caching.md)
+- Deep dive: [Observability front-end](../deep-dives/observability.md): error tracking, RUM, tracing
