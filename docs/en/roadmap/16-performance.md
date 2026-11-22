@@ -69,3 +69,4 @@ guesswork.
 - Deep dive: [How V8 works](../deep-dives/v8.md)
 - Deep dive: [Browser Rendering Pipeline](../deep-dives/browser-rendering-pipeline.md)
 - Deep dive: [HTTP Caching](../deep-dives/http-caching.md)
+- Deep dive: [Front-end observability](../deep-dives/observability.md): error tracking, RUM, tracing

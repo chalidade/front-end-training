@@ -18,7 +18,7 @@ usually just use, with experiments you can run yourself.
 | [Design systems](design-system.md): tokens, governance, versioning | ✅ | 08 |
 | [State management](state-management.md): mental models, not libraries | ✅ | 07, 19 |
 | [Micro-frontends](micro-frontend.md): when and when not | ✅ | 09, 18 |
-| Front-end observability: error tracking, RUM, tracing | 🗓️ | 16 |
+| [Front-end observability](observability.md): error tracking, RUM, tracing | ✅ | 16 |
 | Internationalization (i18n): `Intl`, plural rules, RTL | 🗓️ | 02, 03 |
 
 Every deep dive follows this format: **opening question → mental model → detailed mechanism →

@@ -53,6 +53,7 @@ function sidebar(lang: "id" | "en"): DefaultTheme.Sidebar {
           { text: "Design system", link: `${p}/deep-dives/design-system` },
           { text: "State management", link: `${p}/deep-dives/state-management` },
           { text: "Micro-frontend", link: `${p}/deep-dives/micro-frontend` },
+          { text: "Observability", link: `${p}/deep-dives/observability` },
         ],
       },
     ],
