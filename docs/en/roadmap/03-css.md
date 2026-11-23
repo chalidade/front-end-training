@@ -75,3 +75,4 @@ algorithms, CSS bugs become predictable.
 - [`@chalidade/tokens`](../toolkit/tokens.md): design tokens as custom properties
 - [`@chalidade/utils`](../toolkit/utils.md): `cx` for conditional classNames
 - Deep dive: [CSS Cascade & Specificity](../deep-dives/css-cascade.md)
+- Deep dive: [Internationalization (i18n)](../deep-dives/i18n.md): logical properties and RTL

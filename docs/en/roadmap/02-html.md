@@ -72,3 +72,4 @@ keyboard) without any JavaScript.
 
 - (planned) `@chalidade/ui`: every component follows APG patterns
 - Deep dive: [The accessibility tree & how screen readers work](../deep-dives/accessibility-tree.md)
+- Deep dive: [Internationalization (i18n)](../deep-dives/i18n.md): `lang`, `dir`, `Intl`

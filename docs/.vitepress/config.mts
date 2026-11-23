@@ -54,6 +54,7 @@ function sidebar(lang: "id" | "en"): DefaultTheme.Sidebar {
           { text: "State management", link: `${p}/deep-dives/state-management` },
           { text: "Micro-frontend", link: `${p}/deep-dives/micro-frontend` },
           { text: "Observability", link: `${p}/deep-dives/observability` },
+          { text: "Internationalization (i18n)", link: `${p}/deep-dives/i18n` },
         ],
       },
     ],
