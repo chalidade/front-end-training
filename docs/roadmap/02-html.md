@@ -72,3 +72,4 @@ default browser (fokus, form, keyboard) bisa didapat tanpa JavaScript.
 
 - (rencana) `@chalidade/ui`: semua komponen mengikuti pola APG
 - Deep dive: [Accessibility tree & cara screen reader bekerja](../deep-dives/accessibility-tree.md)
+- Deep dive: [Internationalization (i18n)](../deep-dives/i18n.md): `lang`, `dir`, `Intl`

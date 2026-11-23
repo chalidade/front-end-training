@@ -19,7 +19,7 @@ biasanya hanya dipakai, dengan eksperimen yang bisa dijalankan sendiri.
 | [State management](state-management.md): model mental, bukan library | ✅ | 07, 19 |
 | [Micro-frontend](micro-frontend.md): kapan dan kapan tidak | ✅ | 09, 18 |
 | [Observability front-end](observability.md): error tracking, RUM, tracing | ✅ | 16 |
-| Internationalization (i18n): `Intl`, plural rules, RTL | 🗓️ | 02, 03 |
+| [Internationalization (i18n)](i18n.md): `Intl`, plural rules, RTL | ✅ | 02, 03 |
 
 Format setiap deep dive: **pertanyaan pembuka → model mental → mekanisme detail → eksperimen →
 implikasi praktis → sumber primer.**
