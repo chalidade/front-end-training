@@ -56,4 +56,4 @@ stored, how sessions are renewed, and what happens when a session expires.
 
 ## Related toolkit
 
-- (planned) `@chalidade/fetch`: a fetch wrapper with retry, timeout, and token refresh
+- [`@chalidade/fetch`](../toolkit/fetch.md): `fetchWithRetry` with timeouts and retries; token refresh is left as a practice project
