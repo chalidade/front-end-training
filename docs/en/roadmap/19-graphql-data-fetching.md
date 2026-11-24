@@ -59,4 +59,4 @@ your choice of UI framework.
 ## Related toolkit
 
 - Deep dive: [State management: mental models, not libraries](../deep-dives/state-management.md)
-- (planned) `@chalidade/fetch`
+- [`@chalidade/fetch`](../toolkit/fetch.md): `fetchWithRetry` with timeouts and retries

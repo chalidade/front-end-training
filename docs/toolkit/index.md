@@ -13,6 +13,7 @@ Toolkit adalah package npm kecil yang lahir dari materi roadmap. Setiap package 
 | [`@chalidade/utils`](/toolkit/utils) | `debounce`, `throttle`, `cx`, `clamp` | ✅ siap, belum dipublish ke npm |
 | [`@chalidade/tokens`](/toolkit/tokens) | Design tokens (warna, spacing, tipografi) sebagai CSS variables + TS | ✅ siap, belum dipublish ke npm |
 | [`@chalidade/react-hooks`](/toolkit/react-hooks) | `useDebouncedValue`, `useMediaQuery`, `useLocalStorage`, `useIntersectionObserver`, … | ✅ siap, belum dipublish ke npm |
+| [`@chalidade/fetch`](/toolkit/fetch) | `fetchWithRetry`: timeout, retry dengan backoff + jitter, `Retry-After` | ✅ siap, belum dipublish ke npm |
 | `@chalidade/ui` | Komponen aksesibel (Button, Dialog, Tabs, Combobox, …) | 🗓️ rencana |
 
 ## Prinsip

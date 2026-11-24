@@ -57,6 +57,7 @@ dikuasai, dan hasil yang dipublikasikan dalam satu halaman yang bisa dibagikan a
 | [`@chalidade/utils`](packages/utils) | `debounce`, `throttle`, `cx`, `clamp` | ✅ siap, belum dipublish |
 | [`@chalidade/tokens`](packages/tokens) | Design tokens (warna, spacing, tipografi, motion) sebagai CSS variables + TS, dengan mode gelap | ✅ siap, belum dipublish |
 | [`@chalidade/react-hooks`](packages/react-hooks) | `useDebouncedValue`, `useThrottledCallback`, `useMediaQuery`, `useLocalStorage`, `useOnline`, … | ✅ siap, belum dipublish |
+| [`@chalidade/fetch`](packages/fetch) | `fetchWithRetry`: timeout, retry dengan backoff + jitter, `Retry-After` | ✅ siap, belum dipublish |
 | [`@chalidade/learn-theme`](packages/learn-theme) | Tema VitePress untuk situs belajar: Ruang Belajar, komunitas, Bukti Belajar | ✅ dipakai situs ini, belum dipublish |
 | `@chalidade/ui` | Komponen aksesibel (Button, Dialog, Tabs, Combobox, …) | 🗓️ rencana |
 

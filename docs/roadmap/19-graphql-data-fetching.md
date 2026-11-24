@@ -59,4 +59,4 @@ daripada pilihan framework UI.
 ## Toolkit terkait
 
 - Deep dive: [State management: model mental, bukan library](../deep-dives/state-management.md)
-- (rencana) `@chalidade/fetch`
+- [`@chalidade/fetch`](../toolkit/fetch.md): `fetchWithRetry` dengan timeout dan retry
