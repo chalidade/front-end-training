@@ -67,6 +67,7 @@ function sidebar(lang: "id" | "en"): DefaultTheme.Sidebar {
           { text: "@chalidade/tokens", link: `${p}/toolkit/tokens` },
           { text: "@chalidade/react-hooks", link: `${p}/toolkit/react-hooks` },
           { text: "@chalidade/fetch", link: `${p}/toolkit/fetch` },
+          { text: "@chalidade/security-headers", link: `${p}/toolkit/security-headers` },
         ],
       },
     ],

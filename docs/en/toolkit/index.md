@@ -14,6 +14,7 @@ The toolkits are small npm packages that grow out of the roadmap material. Each 
 | [`@chalidade/tokens`](/en/toolkit/tokens) | Design tokens (color, spacing, typography) as CSS variables + TS | ✅ ready, not yet published to npm |
 | [`@chalidade/react-hooks`](/en/toolkit/react-hooks) | `useDebouncedValue`, `useMediaQuery`, `useLocalStorage`, `useIntersectionObserver`, … | ✅ ready, not yet published to npm |
 | [`@chalidade/fetch`](/en/toolkit/fetch) | `fetchWithRetry`: timeout, retries with backoff + jitter, `Retry-After` | ✅ ready, not yet published to npm |
+| [`@chalidade/security-headers`](/en/toolkit/security-headers) | Security header presets (strict CSP, HSTS, Permissions-Policy) for Next.js / Vite / Express | ✅ ready, not yet published to npm |
 | `@chalidade/ui` | Accessible components (Button, Dialog, Tabs, Combobox, …) | 🗓️ planned |
 
 ## Principles
