@@ -58,4 +58,4 @@ full access to the page. Many data leaks start with a front-end decision that lo
 
 ## Related toolkit
 
-- (planned) `@chalidade/security-headers`: header presets for Next.js / Vite / Express
+- [`@chalidade/security-headers`](/en/toolkit/security-headers): header presets (nonce-based strict CSP, HSTS, Permissions-Policy) for Next.js / Vite / Express
