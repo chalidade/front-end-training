@@ -67,5 +67,5 @@ mengoptimasi di tempat yang salah.
 
 ## Toolkit terkait
 
-- (rencana) `@chalidade/http-cache-presets`: preset header cache untuk berbagai jenis aset
+- [`@chalidade/http-cache-presets`](/toolkit/http-cache-presets): builder dan preset `Cache-Control` untuk aset ber-hash, HTML, API, dan data sensitif
 - Deep dive: [HTTP Caching](../deep-dives/http-caching.md)

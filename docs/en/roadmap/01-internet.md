@@ -66,5 +66,5 @@ network. Developers who don't understand the path from URL to pixels end up opti
 
 ## Related toolkit
 
-- (planned) `@chalidade/http-cache-presets`: cache header presets for different asset types
+- [`@chalidade/http-cache-presets`](/en/toolkit/http-cache-presets): `Cache-Control` builder and presets for hashed assets, HTML, APIs, and sensitive data
 - Deep dive: [HTTP Caching](../deep-dives/http-caching.md)
