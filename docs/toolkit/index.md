@@ -15,6 +15,7 @@ Toolkit adalah package npm kecil yang lahir dari materi roadmap. Setiap package 
 | [`@chalidade/react-hooks`](/toolkit/react-hooks) | `useDebouncedValue`, `useMediaQuery`, `useLocalStorage`, `useIntersectionObserver`, … | ✅ siap, belum dipublish ke npm |
 | [`@chalidade/fetch`](/toolkit/fetch) | `fetchWithRetry`: timeout, retry dengan backoff + jitter, `Retry-After` | ✅ siap, belum dipublish ke npm |
 | [`@chalidade/security-headers`](/toolkit/security-headers) | Preset header keamanan (CSP strict, HSTS, Permissions-Policy) untuk Next.js / Vite / Express | ✅ siap, belum dipublish ke npm |
+| [`@chalidade/http-cache-presets`](/toolkit/http-cache-presets) | Builder dan preset `Cache-Control` (aset ber-hash, HTML, API, data sensitif) | ✅ siap, belum dipublish ke npm |
 | `@chalidade/ui` | Komponen aksesibel (Button, Dialog, Tabs, Combobox, …) | 🗓️ rencana |
 
 ## Prinsip

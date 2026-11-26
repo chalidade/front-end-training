@@ -50,6 +50,8 @@ importers:
 
   packages/fetch: {}
 
+  packages/http-cache-presets: {}
+
   packages/learn-theme:
     dependencies:
       '@codemirror/lang-css':

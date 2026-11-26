@@ -59,6 +59,7 @@ dikuasai, dan hasil yang dipublikasikan dalam satu halaman yang bisa dibagikan a
 | [`@chalidade/react-hooks`](packages/react-hooks) | `useDebouncedValue`, `useThrottledCallback`, `useMediaQuery`, `useLocalStorage`, `useOnline`, … | ✅ siap, belum dipublish |
 | [`@chalidade/fetch`](packages/fetch) | `fetchWithRetry`: timeout, retry dengan backoff + jitter, `Retry-After` | ✅ siap, belum dipublish |
 | [`@chalidade/security-headers`](packages/security-headers) | Preset header keamanan (CSP strict, HSTS, Permissions-Policy) untuk Next.js / Vite / Express | ✅ siap, belum dipublish |
+| [`@chalidade/http-cache-presets`](packages/http-cache-presets) | Builder dan preset `Cache-Control` (aset ber-hash, HTML, API, data sensitif) | ✅ siap, belum dipublish |
 | [`@chalidade/learn-theme`](packages/learn-theme) | Tema VitePress untuk situs belajar: Ruang Belajar, komunitas, Bukti Belajar | ✅ dipakai situs ini, belum dipublish |
 | `@chalidade/ui` | Komponen aksesibel (Button, Dialog, Tabs, Combobox, …) | 🗓️ rencana |
 

@@ -119,6 +119,9 @@ Pola yang dipakai hampir semua aplikasi modern:
 | Respons per user | `private, no-cache` | Jangan sampai tersimpan di CDN dan bocor ke user lain |
 | Data sensitif (token, data bank) | `no-store` | Jangan tersimpan di disk sama sekali |
 
+Tabel ini tersedia sebagai kode di [`@chalidade/http-cache-presets`](/toolkit/http-cache-presets),
+lengkap dengan eksperimen Chromium yang menunjukkan file mana yang benar-benar diminta ulang.
+
 - **Jangan pernah** memberi `max-age` panjang ke URL yang isinya bisa berubah. Tidak ada cara
   untuk "menarik kembali" cache yang sudah ada di browser user.
 - Kalau user melihat versi lama setelah deploy, cek dulu header HTML: hampir selalu ada

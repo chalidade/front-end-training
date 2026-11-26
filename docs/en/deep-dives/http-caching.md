@@ -118,6 +118,9 @@ The pattern almost every modern app uses:
 | Per-user responses | `private, no-cache` | Must never be stored on a CDN and leak to other users |
 | Sensitive data (tokens, banking) | `no-store` | Never written to disk |
 
+This table is available as code in [`@chalidade/http-cache-presets`](/en/toolkit/http-cache-presets),
+with a Chromium experiment showing which files actually get requested again.
+
 - **Never** give a long `max-age` to a URL whose content can change. There's no way to "recall" a
   response already cached in users' browsers.
 - If users see an old version after a deploy, check the HTML headers first: there's almost always a
