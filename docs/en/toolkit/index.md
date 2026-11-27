@@ -16,6 +16,7 @@ The toolkits are small npm packages that grow out of the roadmap material. Each 
 | [`@chalidade/fetch`](/en/toolkit/fetch) | `fetchWithRetry`: timeout, retries with backoff + jitter, `Retry-After` | ✅ ready, not yet published to npm |
 | [`@chalidade/security-headers`](/en/toolkit/security-headers) | Security header presets (strict CSP, HSTS, Permissions-Policy) for Next.js / Vite / Express | ✅ ready, not yet published to npm |
 | [`@chalidade/http-cache-presets`](/en/toolkit/http-cache-presets) | `Cache-Control` builder and presets (hashed assets, HTML, APIs, sensitive data) | ✅ ready, not yet published to npm |
+| [`@chalidade/eslint-config`](/en/toolkit/eslint-config) | Shared ESLint flat config: JS + TS, optional React Hooks and type-aware rules, Prettier-safe | ✅ ready, not yet published to npm |
 | `@chalidade/ui` | Accessible components (Button, Dialog, Tabs, Combobox, …) | 🗓️ planned |
 
 ## Principles
