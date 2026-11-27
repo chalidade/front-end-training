@@ -69,6 +69,7 @@ function sidebar(lang: "id" | "en"): DefaultTheme.Sidebar {
           { text: "@chalidade/fetch", link: `${p}/toolkit/fetch` },
           { text: "@chalidade/security-headers", link: `${p}/toolkit/security-headers` },
           { text: "@chalidade/http-cache-presets", link: `${p}/toolkit/http-cache-presets` },
+          { text: "@chalidade/eslint-config", link: `${p}/toolkit/eslint-config` },
         ],
       },
     ],

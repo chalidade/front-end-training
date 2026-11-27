@@ -54,4 +54,4 @@ bundler, compiler, dan codemod.
 
 ## Toolkit terkait
 
-- (rencana) `@chalidade/eslint-config`: konfigurasi bersama untuk project yang memakai toolkit ini
+- [`@chalidade/eslint-config`](/toolkit/eslint-config): flat config bersama (JS + TS, React Hooks dan type-aware opsional, aman dengan Prettier)

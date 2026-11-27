@@ -53,4 +53,4 @@ useful concept, the **AST (Abstract Syntax Tree)**, which bundlers, compilers, a
 
 ## Related toolkit
 
-- (planned) `@chalidade/eslint-config`: a shared config for projects using this toolkit
+- [`@chalidade/eslint-config`](/en/toolkit/eslint-config): a shared flat config (JS + TS, optional React Hooks and type-aware rules, Prettier-safe)
